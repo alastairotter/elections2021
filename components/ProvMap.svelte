@@ -9,7 +9,7 @@
   import { municipalities } from '../datastore/municipalities.js'
   import L from 'leaflet'
   import { municipalData } from '../datastore/municipal-data.js'
-  import '../src/leaflet.pattern-src.js'
+  // import '../src/leaflet.pattern-src.js'
   let map
   let stripes
 
@@ -408,64 +408,8 @@
 </div>
 
 <style>
-  .map-legend {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 30000;
-    font-family: var(--tooltipFont);
-
-    font-size: 0.8rem;
-  }
-  .legend-icon {
-    margin-top: 10px;
-  }
-  .legend-icon img {
-    width: 12px;
-    margin: 0px;
-  }
-  .legend-icon * {
-    display: inline-block;
-  }
-  .legend-wrap {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    margin-top: 10px;
-  }
-  .map-title {
-    font-family: var(--headerFont);
-    font-size: 1.2rem;
-    font-weight: 700;
-    z-index: 10000;
-    padding: 1px 15px;
-    background: #7fb4b4;
-    margin-top: 5px;
-    color: #fff;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.28);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.28);
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.28);
-  }
-  .map-wrap {
-    height: 100%;
-  }
   .map {
     width: 100%;
     height: 500px;
-  }
-  .province-name {
-    font-family: var(--headerFont);
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-
-  .map-holder {
-    display: grid;
-    grid-template-columns: 1.5fr 5fr;
-    /* background: #fff; */
-    /* border: solid 1px lightgray; */
-    padding-left: 10px;
-    margin-top: 10px;
-    /* border: solid 1px gray; */
   }
 </style>

@@ -24,36 +24,31 @@
 
 <main>
   <Header />
-
-  <div class="maps-wrap">
-    <div class="map-title-wrap">
-      <div class="map-title">Local Government Elections 2021</div>
-      <div class="map-options">
-        SHOW: &nbsp; Voter turnout: <input
-          type="checkbox"
-          bind:checked={arrows}
-        />
-        &nbsp; 2016 Coalitions:
-        <input type="checkbox" bind:checked={coalition} />
-      </div>
+  <div class="map-title-wrap">
+    <div class="map-title">Local Government Elections 2021</div>
+    <div class="map-options">
+      SHOW: &nbsp; Voter turnout: <input
+        type="checkbox"
+        bind:checked={arrows}
+      />
+      &nbsp; 2016 Coalitions:
+      <input type="checkbox" bind:checked={coalition} />
     </div>
+  </div>
+  <div class="maps-wrap">
     <div class="map-body">
       <div class="map-menu-wrap">
         <MapMenu {province} on:message={clicked} />
       </div>
-      <div>
-        {#if promise}
-          <ProvMap {province} {coalition} {arrows} />
-        {/if}
-      </div>
+
+      {#if promise}
+        <ProvMap {province} {coalition} {arrows} />
+      {/if}
     </div>
   </div>
 </main>
 
 <style>
-  .map-menu-wrap {
-    margin-top: 100px;
-  }
   .map-body {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -67,26 +62,27 @@
     width: 100%;
   }
   .map-title-wrap {
-    margin-bottom: 20px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    /* margin-bottom: 20px; */
+    /* position: absolute; */
+
     padding: 20px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     background: #7fb4b4;
-    /* border: solid 1px lightgray; */
+    border: solid 1px lightgray;
     z-index: 3000;
     color: #fff;
+    width: 100%;
   }
   .map-options {
+    /* position: absolute; */
     width: 100%;
     font-family: var(--figureFont);
     font-weight: 700;
   }
   .maps-wrap {
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    min-height: 450px;
+    min-height: 500px;
     background: #fff;
 
     padding: 20px;

@@ -29,9 +29,17 @@
       </ul>
     </nav>
   </div>
+  <div class="legend-description">
+    <img src="/images/red-arrow.png" alt="red arrow" /> = Voter turnout 2016 vs 2021
+  </div>
 </div>
 
 <style>
+  .legend-description img {
+    width: 20px;
+    height: 20px;
+  }
+
   .map-menu {
     width: 100%;
     height: 100%;
