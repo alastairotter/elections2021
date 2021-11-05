@@ -1,6 +1,7 @@
 <script>
   export let province
   export let arrows = true
+  export let hung = true
   import { electionData } from '../datastore/election-data.js'
   import { provinceMap } from '../datastore/provinces-map.js'
   import { provinces } from '../datastore/provinces.js'
@@ -46,7 +47,7 @@
   // Set up arrows
   let ArrowIcon = L.Icon.extend({
     options: {
-      iconSize: [10, 20],
+      iconSize: [20, 20],
       iconAnchor: [0, 5],
       popupAnchor: [-3, -76],
 
@@ -133,16 +134,18 @@
     )
     if (c[0]) {
       if (c[0]['Coalitions?'] === 'Yes') {
-        if (c[0]['Council run by'] === 'ANC coalition') {
-          fillColor = green
-          borderColor = '#fff'
-        } else if (c[0]['Council run by'] === 'DA coalition') {
-          fillColor = blue
-          borderColor = '#fff'
-        } else {
-          fillColor = red
-          borderColor = '#fff'
-        }
+        fillColor = '#6D9EFF'
+        borderColor = '#fff'
+        // if (c[0]['Council run by'] === 'ANC coalition') {
+        //   fillColor = green
+        //   borderColor = '#fff'
+        // } else if (c[0]['Council run by'] === 'DA coalition') {
+        //   fillColor = blue
+        //   borderColor = '#fff'
+        // } else {
+        //   fillColor = red
+        //   borderColor = '#fff'
+        // }
       }
     }
 
@@ -191,7 +194,7 @@
 
     if (muniName.length > 0) {
       tt = `<div class="tt-title">${muniName[0].Municipality}</div>`
-      tt += `<div class="tt-description">${muniName[0]['Council run by']}</div>`
+      // tt += `<div class="tt-description">${muniName[0]['Council run by']}</div>`
     }
     if (electionDetail.length > 0) {
       tt += `<div class="tt-crosshead">Voter Turnout</div>`
@@ -211,6 +214,17 @@
   function move(feature) {
     ttX = feature.originalEvent.clientX + 10
     ttY = feature.originalEvent.clientY
+    // let ww = window.innerWidth
+    // console.log(ww)
+
+    // if (ww - ttX < 200) {
+    //   ttX = feature.originalEvent.clientX - 100
+    //   ttY = feature.originalEvent.clientY + 15
+    // } else {
+    //   ttX = feature.originalEvent.clientX + 10
+    //   ttY = feature.originalEvent.clientY
+    // }
+
     // let x = feature.originalEvent.clientX
     // let y = feature.originalEvent.clientY
     // tooltip.style.top = y - 5 + 'px'
@@ -386,26 +400,29 @@
 
   $: if (!coalition && map) {
     map.removeLayer(coalitionMap)
+    map.addLayer(hungMap)
+    hung = true
   }
   $: if (coalition && map) {
     map.addLayer(coalitionMap)
+    // map.removeLayer(hungMap)
+    hung = false
   }
+  // $: if (!hung && map) {
+  //   map.removeLayer(hungMap)
+  // }
+  // $: if (hung && map) {
+  //   map.addLayer(hungMap)
+  //   map.removeLayer(coalitionMap)
+  //   coalition = false
+  // }
 </script>
 
 {#if tooltipShow}
   <div class="tooltip" style="left: {ttX}px; top: {ttY}px;">{@html tt}</div>
 {/if}
-<div class="map-wrap">
-  <!-- <div class="map-legend">
-    <div class="map-title">{provName}</div>
-    <div class="legend-icon">
-      The red <img src="/images/red-arrow.png" alt="" /> and green
-      <img src="/images/green-arrow.png" alt="" /> arrows indicate the change in
-      voter turnout between 2016 and 2021.
-    </div>
-  </div> -->
-  <div id="map" class="map" />
-</div>
+
+<div id="map" class="map" />
 
 <style>
   .map {

@@ -6,6 +6,7 @@
   export let province = 'EC'
   let coalition = false
   let arrows = true
+  let hung = true
   //   import { municipalData } from '../datastore/municipal-data.js'
   function clicked(e) {
     console.log(e.detail.province)
@@ -31,7 +32,9 @@
         type="checkbox"
         bind:checked={arrows}
       />
-      &nbsp; 2016 Coalitions:
+      <!-- &nbsp; 2021 Hung municipalities:
+      <input type="checkbox" bind:checked={hung} /> -->
+      &nbsp; Compare with 2016 coalitions:
       <input type="checkbox" bind:checked={coalition} />
     </div>
   </div>
@@ -42,7 +45,7 @@
       </div>
 
       {#if promise}
-        <ProvMap {province} {coalition} {arrows} />
+        <ProvMap {province} {coalition} {arrows} {hung} />
       {/if}
     </div>
   </div>
@@ -52,42 +55,45 @@
   .map-body {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
   }
   .map-title {
     font-family: var(--figureFont);
     font-weight: 700;
     font-size: 1.3rem;
     color: #fff;
-    width: 100%;
+    /* width: 100%; */
   }
   .map-title-wrap {
     /* margin-bottom: 20px; */
     /* position: absolute; */
-
-    padding: 20px;
-    /* padding-top: 10px; */
+    max-width: 96%;
+    padding: 2%;
+    padding-top: 10px;
     background: #7fb4b4;
     border: solid 1px lightgray;
     z-index: 3000;
     color: #fff;
-    width: 100%;
+    /* width: 100%; */
   }
   .map-options {
-    /* position: absolute; */
     width: 100%;
     font-family: var(--figureFont);
     font-weight: 700;
   }
   .maps-wrap {
-    /* position: relative; */
-    width: 100%;
+    width: 96%;
     min-height: 500px;
+    max-width: 1000px;
     background: #fff;
-
-    padding: 20px;
-    border: solid 1px var(--gray200);
+    /* padding: 20ppadding: 2%;x; */
+    padding: 2%;
+    /* border: solid 1px var(--gray200); */
     border-top: none;
-    /* padding-bottom: 0px; */
+  }
+  @media only screen and (max-width: 800px) {
+    .map-body {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

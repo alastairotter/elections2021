@@ -30,14 +30,27 @@
     </nav>
   </div>
   <div class="legend-description">
-    <img src="/images/red-arrow.png" alt="red arrow" /> = Voter turnout 2016 vs 2021
+    <img src="/images/red-arrow.png" alt="red arrow" /> = Voter turnout 2021 vs
+    2016<br />
+    <img src="/images/tshwane.svg" alt="Tshwane" /> = Hung municipalities 2021
+    <br />
+    <img src="/images/tshwane-blue.svg" alt="Tshwane" /> = Coalitions post-2016
   </div>
 </div>
 
 <style>
+  .legend-description {
+    font-family: var(--figureFont);
+    color: var(--gray500);
+    font-size: 0.8rem;
+    /* text-transform: uppercase; */
+    line-height: 1.5rem;
+    text-align: center;
+  }
   .legend-description img {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    transform: translate(0, 5px);
   }
 
   .map-menu {
@@ -50,6 +63,7 @@
   nav {
     margin-top: 0px;
   }
+
   nav ul {
     margin-top: 0px;
     width: 100%;
@@ -84,5 +98,22 @@
   }
   .selected-tab:hover {
     background: #7fb4b4;
+  }
+
+  @media only screen and (max-width: 800px) {
+    nav {
+      text-align: center;
+    }
+    nav li {
+      background: #eee;
+      /* background-color: lightblue; */
+    }
+    .legend-description {
+      margin-bottom: 20px;
+    }
+
+    nav * {
+      display: inline-block;
+    }
   }
 </style>
