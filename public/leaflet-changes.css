@@ -1,0 +1,22 @@
+/* leaflet */
+.arrow {
+	pointer-events: none;
+}
+
+.leaflet-container {
+	background: none !important;
+}
+.leaflet-control-attribution {
+	display: none !important;
+}
+
+/* City markers */
+.leaflet-tooltip {
+	background: rgba(255, 255, 255, 0.4);
+	background: none;
+	border: none;
+	font-weight: 300;
+	box-shadow: none;
+	color: #000;
+	/* transform: translate(10px, 10px) !important; */
+}
