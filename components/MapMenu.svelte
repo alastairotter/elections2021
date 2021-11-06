@@ -30,11 +30,11 @@
     </nav>
   </div>
   <div class="legend-description">
-    <img src="/images/red-arrow.png" alt="red arrow" /> = Voter turnout 2021 vs
+    <img src="./images/red-arrow.png" alt="red arrow" /> = Voter turnout 2021 vs
     2016<br />
-    <img src="/images/tshwane.svg" alt="Tshwane" /> = Hung municipalities 2021
-    <br />
-    <img src="/images/tshwane-blue.svg" alt="Tshwane" /> = Coalitions post-2016
+    <img src="./images/tshwane.svg" alt="Tshwane" /> = Hung municipalities 2021
+    <!-- <br />
+    <img src="./images/tshwane-blue.svg" alt="Tshwane" /> = Coalitions post-2016 -->
   </div>
 </div>
 

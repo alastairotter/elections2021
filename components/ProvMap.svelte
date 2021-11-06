@@ -55,11 +55,11 @@
     },
   })
 
-  blackArrow = new ArrowIcon({ iconUrl: '/images/arrow.png' })
-  ancArrow = new ArrowIcon({ iconUrl: '/images/anc-arrow.png' })
-  daArrow = new ArrowIcon({ iconUrl: '/images/da-arrow.png' })
-  redArrow = new ArrowIcon({ iconUrl: '/images/red-arrow.png' })
-  greenArrow = new ArrowIcon({ iconUrl: '/images/green-arrow.png' })
+  blackArrow = new ArrowIcon({ iconUrl: './images/arrow.png' })
+  ancArrow = new ArrowIcon({ iconUrl: './images/anc-arrow.png' })
+  daArrow = new ArrowIcon({ iconUrl: './images/da-arrow.png' })
+  redArrow = new ArrowIcon({ iconUrl: './images/red-arrow.png' })
+  greenArrow = new ArrowIcon({ iconUrl: './images/green-arrow.png' })
 
   // Set up arrows
 

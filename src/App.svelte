@@ -24,6 +24,9 @@
 </script>
 
 <main>
+  <!-- <div class="logo">
+    <img src="./images/outlier-logo.png" alt="logo" class="logo" />
+  </div> -->
   <Header />
   <div class="map-title-wrap">
     <div class="map-title">Local Government Elections 2021</div>
@@ -34,8 +37,8 @@
       />
       <!-- &nbsp; 2021 Hung municipalities:
       <input type="checkbox" bind:checked={hung} /> -->
-      &nbsp; Compare with 2016 coalitions:
-      <input type="checkbox" bind:checked={coalition} />
+      <!-- &nbsp; Compare with 2016 coalitions:
+      <input type="checkbox" bind:checked={coalition} /> -->
     </div>
   </div>
   <div class="maps-wrap">
@@ -52,6 +55,13 @@
 </main>
 
 <style>
+  .logo {
+    background: #fff;
+    padding: 10px;
+  }
+  .logo img {
+    height: 40px;
+  }
   .map-body {
     display: grid;
     grid-template-columns: 1fr 3fr;
